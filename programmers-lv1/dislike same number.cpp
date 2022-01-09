@@ -1,12 +1,16 @@
-#include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
-int solution(vector<int> numbers) {
-    int sum=0;
-    for(int i=0;i<numbers.size();i++){
-        sum+=numbers[i];
+vector<int> solution(vector<int> arr) 
+{
+    vector<int> answer;
+    answer.push_back(arr[0]);
+    for(int i=1;i<arr.size();i++){
+        if(arr[i]!=arr[i-1]){
+            answer.push_back(arr[i]);
+        }
     }
-    return 45-sum;
+    return answer;
 }
